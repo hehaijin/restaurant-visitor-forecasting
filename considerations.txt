@@ -1,0 +1,40 @@
+1, do not use date. use year, month, day of week.
+useful features: holiday, for each store, calculate it's statistics of visitors per year, or per month?
+statistics of reserve data.
+
+since it's predicting apral-may, it makes sense to add reserved-apiral-may-2016, reserved april-may 2017,
+
+
+
+
+2, the training and testing data are well formated. it make sense to make adding feature easier.
+
+
+2, the use of astype('category')
+
+
+3, methods used randomforestregressor.
+     GradientBoostingRegressor
+     KNeighborsRegressor
+
+
+4, should the store_id be used?
+probabally not.
+maybe only decision tree can pick it up.
+
+
+
+
+
+
+['dow', 'year', 'month', 'day_of_week', 'holiday_flg', 'min_visitors', 'mean_visitors', 'median_visitors', 'max_visitors', 'count_observations', 'air_genre_name', 'air_area_name', 'latitude', 'longitude', 'air_genre_name0', 'air_area_name0', 'air_genre_name1', 'air_area_name1', 'air_genre_name2', 'air_area_name2', 'air_genre_name3', 'air_area_name3', 'air_genre_name4', 'air_area_name4', 'air_genre_name5', 'air_area_name5', 'air_genre_name6', 'air_area_name6', 'air_genre_name7', 'air_area_name7', 'air_genre_name8', 'air_area_name8', 'air_genre_name9', 'air_area_name9', 'rs1_x', 'rv1_x', 'rs2_x', 'rv2_x', 'rs1_y', 'rv1_y', 'rs2_y', 'rv2_y', 'total_reserv_sum', 'total_reserv_mean', 'total_reserv_dt_diff_mean', 'date_int', 'var_max_lat', 'var_max_long', 'lon_plus_lat', 'air_store_id2']
+
+
+5, data vs model.
+1, what happens when you have a extra column of random data?
+2, what happens when you have a column of duplicate data?
+3, for a regressor, if I have its mean and variance data as column, what model can pick it up?
+
+
+6, is boolean considered numerical?
+
