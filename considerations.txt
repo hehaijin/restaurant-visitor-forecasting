@@ -14,13 +14,19 @@ since it's predicting apral-may, it makes sense to add reserved-apiral-may-2016,
 
 
 3, methods used randomforestregressor.
-     GradientBoostingRegressor
-     KNeighborsRegressor
-
+     sklearn.ensemble.GradientBoostingRegressor
+     sklearn.neighbors.KNeighborsRegressor
+     sklearn.linear_model.LinearRegression (not good on numerical and category mix)
+	sklearn.svm.SVR   (not good on numerical and category mix)
+	sklearn.tree.DecisionTreeRegressor
+	sklearn.neural_network.MLPRegressor
+	sklearn.ensemble.RandomForestRegressor
+	sklearn.ensemble.BaggingRegressor
 
 4, should the store_id be used?
 probabally not.
 maybe only decision tree can pick it up.
+but 
 
 
 
@@ -37,4 +43,37 @@ maybe only decision tree can pick it up.
 
 
 6, is boolean considered numerical?
+
+
+7, how to deal with the longtitute, latitude data?
+   the longtitude data are area longtitudes.
+   in one kernel,  max(longtitude)-longtitude
+                   longtitude+latitude are used as features
+
+8, the area name.
+   
+
+
+
+9, the evaluation metrics
+   root mean squared logarithmic error.
+   so we can convert the target value to logarithmic using np.log1p
+   then it is the normal RMSE(root mean square error)
+
+   *there is a function in sklearn
+	sklearn.metrics.mean_squared_log_error
+    def rmle(y1,y2):
+	return metrics.mean_squred_log_error(y1,y2)**0.5
+	RMSLE is usually used when you don't want to penalize huge differences in the predicted and true values when both predicted and true values are huge numbers. 
+
+    log(Pi+1)- log(Ai+1)= log(Pi+1/Ai+1)
+    a score of 0.4 means e^0.4 = 1.49
+    a score of 0.47 means e^0.47 = 1.59 
+    which means current best estimation have about 60% deviation from real value, which is terrible. which is not supprising given the low coverage of reservation data, and little othere relevant information, and perhaps the nature of visitors is big deviation.  
+
+10, 
+
+
+
+
 
